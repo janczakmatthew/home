@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Janczak's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 </head>
 
 <body class="bg-neutral-900 text-white font-serif min-h-screen">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
     <nav class="bg-blue-700 fixed top-0 left-0 right-0 z-50 shadow-lg">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
@@ -32,22 +30,45 @@
                     </button>
                 </div>
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start w-full">
-                    <div class="flex shrink-0 items-center">
-                        <img src="/home/img/matthewjancak_portfolio_logo.png"
-                            alt="Matthew Janczak's Portfolio Logo" class="h-20 w-auto" />
+                    <div class="flex shrink-0 items-center max-w-20">
+                        <img src="/home/img/matthewjancak_portfolio_logo.png" alt="Matthew Janczak's Portfolio Logo"
+                            class="h-20 w-auto" />
                     </div>
                     <div class="hidden sm:ml-6 sm:block m-auto w-full">
-                        <div class="flex space-x-4 justify-center">
+                        <div class="flex gap-[10px] justify-center">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                            <a href="#" aria-current="page"
-                                class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Dashboard</a>
-                            <a href="#"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                            <a href="#"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                            <a href="#"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                            <a href="#" class="uppercase ring-1 ring-white px-2 py-1 rounded-md hover:ring-blue-700 hover:bg-zinc-900">Home</a>
+                            <span> | </span>
+                            <!-- Profile dropdown -->
+                            <div class="relative">
+                                <el-dropdown>
+                                    <button
+                                        class="relative flex h-[32px] max-w-xs items-center rounded-full uppercase ring-1 ring-white px-2 py-1 rounded-md hover:ring-blue-700 hover:bg-zinc-900 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800">
+                                        Projects
+                                        
+                                    </button>
+
+                                    <el-menu anchor="bottom start" popover
+                                        class="absolute z-50 mt-2 -ml-2 w-48 origin-top-left rounded-md bg-zinc-700 py-1 transition transition-discrete [--anchor-gap:--spacing(2)] focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
+                                        <a href="#"
+                                            class="block px-4 py-2 uppercase text-sm text-white rounded-md focus:bg-zinc-900 focus:outline-hidden">Your
+                                            Profile</a>
+                                        <a href="#"
+                                            class="block px-4 py-2 uppercase text-sm text-white rounded-md focus:bg-zinc-900 focus:outline-hidden">Settings</a>
+                                        <a href="#"
+                                            class="block px-4 py-2 uppercase text-sm text-white rounded-md focus:bg-zinc-900 focus:outline-hidden">Sign
+                                            out</a>
+                                    </el-menu>
+                                </el-dropdown>
+                            </div>
+                            <span> | </span>
+                            <a href="#" class="uppercase ring-1 ring-white px-2 py-1 rounded-md hover:ring-blue-700 hover:bg-zinc-900">About Me</a>
+                            <span> | </span>
+                            <a href="#" class="uppercase ring-1 ring-white px-2 py-1 rounded-md hover:ring-blue-700 hover:bg-zinc-900">Contact</a>
                         </div>
+                    </div>
+                    <div class="flex shrink-0 items-center min-w-20">
+                        
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -85,11 +106,15 @@
         </el-disclosure>
     </nav>
 
-    <div class="main-body">
-        <div class="section section-intro flex flex-col min-h-screen items-center justify-center p-10">
-            <div>
-                <h1 class="text-3xl font-bold text-center uppercase mt-10">Matthew Janczak</h1>
-                <p class="text-base text-center text-blue-200 w-1/2 sm:w-full py-5 px-10 m-auto">
+    <div class="main-body m-auto">
+        <div
+            class="section section-intro flex flex-col max-w-7xl min-h-screen items-center justify-center lg:w-3/4 m-auto p-10">
+            <h1 class="text-3xl font-bold text-center uppercase my-10">Matthew Janczak</h1>
+            <div class="flex p-5">
+                <div class="flex-auto w-1/3">
+                    <img src="/home/img/DA_Logo.png" />
+                </div>
+                <p class="flex-auto w-2/3 text-base text-center bg-blue-700 text-blue-100 py-5 px-10 rounded-md shadow-md shadow-zinc-400/50">
                     Welcome!
                     I am a freelance web developer with a passion for clean design, creative tools, and functional
                     interfaces.
@@ -112,8 +137,7 @@
                     class="relative isolate overflow-hidden bg-zinc-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
                     <svg viewBox="0 0 1024 1024" aria-hidden="true"
                         class="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0">
-                        <circle r="512" cx="512" cy="512" fill="url(#blue-gray)"
-                            fill-opacity="0.7" />
+                        <circle r="512" cx="512" cy="512" fill="url(#blue-gray)" fill-opacity="0.7" />
                         <defs>
                             <radialGradient id="blue-gray">
                                 <stop stop-color="#1d4ed8" />
@@ -122,19 +146,20 @@
                         </defs>
                     </svg>
                     <div class="text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                        <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">DungeonArtworks</h2>
-                        <p class="mt-6 text-lg/8 text-pretty text-gray-300">Take a look at my personal digital artwork store!</p>
+                        <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
+                            DungeonArtworks</h2>
+                        <p class="mt-6 text-lg/8 text-pretty text-gray-300">Take a look at my personal digital artwork
+                            store!</p>
                         <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                             <a href="#"
                                 class="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs ring-1 hover:ring-gray-700 hover:bg-blue-700">
-                                Vist DungeonArtworks 
-                            <span aria-hidden="true"> →</span>
+                                Vist DungeonArtworks
+                                <span aria-hidden="true"> →</span>
                             </a>
                         </div>
                     </div>
                     <div class="relative flex items-center w-96">
-                        <img src="/home/img/DA_Logo.png"
-                            alt="DungeonArtworks Logo"
+                        <img src="/home/img/DA_Logo.png" alt="DungeonArtworks Logo"
                             class="object-fill rounded-md bg-white/5 ring-1 ring-white/10" />
                     </div>
                 </div>
@@ -147,8 +172,7 @@
                     class="relative isolate overflow-hidden bg-blue-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
                     <svg viewBox="0 0 1024 1024" aria-hidden="true"
                         class="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0">
-                        <circle r="512" cx="512" cy="512" fill="url(#gray-blue)"
-                            fill-opacity="0.7" />
+                        <circle r="512" cx="512" cy="512" fill="url(#gray-blue)" fill-opacity="0.7" />
                         <defs>
                             <radialGradient id="gray-blue">
                                 <stop stop-color="#27272a" />
@@ -156,23 +180,23 @@
                             </radialGradient>
                         </defs>
                     </svg>
-                     <div class="relative flex items-center w-96">
-                        <img src="/home/img/aubrey_moore_logo.png"
-                            alt="Aubrey Moore Logo"
+                    <div class="relative flex items-center w-96">
+                        <img src="/home/img/aubrey_moore_logo.png" alt="Aubrey Moore Logo"
                             class="object-fill max-w-96 h-500 rounded-md bg-white/5 ring-1 ring-white/10" />
                     </div>
-                    <div class="text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                        <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Aubrey Moore  </h2>
+                    <div class="text-center content-end lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                        <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Aubrey
+                            Moore </h2>
                         <p class="mt-6 text-lg/8 text-pretty text-gray-300">Take a look at my AI model!</p>
                         <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                             <a href="#"
                                 class="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs ring-1 ring-gray-700 hover:ring-blue-700 hover:bg-gray-700">
-                                Vist Aubrey Moore 
-                            <span aria-hidden="true"> →</span>
+                                Vist Aubrey Moore
+                                <span aria-hidden="true"> →</span>
                             </a>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
@@ -183,8 +207,7 @@
                     class="relative isolate overflow-hidden bg-zinc-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
                     <svg viewBox="0 0 1024 1024" aria-hidden="true"
                         class="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0">
-                        <circle r="512" cx="512" cy="512" fill="url(#blue-gray)"
-                            fill-opacity="0.7" />
+                        <circle r="512" cx="512" cy="512" fill="url(#blue-gray)" fill-opacity="0.7" />
                         <defs>
                             <radialGradient id="blue-gray">
                                 <stop stop-color="#1d4ed8" />
@@ -193,19 +216,19 @@
                         </defs>
                     </svg>
                     <div class="text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                        <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Character Creator</h2>
+                        <h2 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">Character
+                            Creator</h2>
                         <p class="mt-6 text-lg/8 text-pretty text-gray-300">Take a look at my Character Creator!</p>
                         <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                             <a href="#"
                                 class="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs ring-1 hover:ring-gray-700 hover:bg-blue-700">
-                                Vist Character Creator 
-                            <span aria-hidden="true"> →</span>
+                                Vist Character Creator
+                                <span aria-hidden="true"> →</span>
                             </a>
                         </div>
                     </div>
                     <div class="relative flex items-center w-96">
-                        <img src="/home/img/character_creator_logo.png"
-                            alt="Character Creator Logo"
+                        <img src="/home/img/character_creator_logo.png" alt="Character Creator Logo"
                             class="object-fill rounded-md bg-white/5 ring-1 ring-white/10" />
                     </div>
                 </div>
@@ -216,8 +239,11 @@
 
     <footer class="bg-neutral-800 text-center py-6">
         <p class="text-gray-400">© 2025 Matthew Janczak. All rights reserved.</p>
-        <p class="text-gray-500 text-sm">Built with Tailwind CSS and custom elements.</p>   
+        <p class="text-gray-500 text-sm">Built with Tailwind CSS and custom elements.</p>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
 </body>
 
