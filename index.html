@@ -21,39 +21,30 @@
                     <div class="sm:ml-6 sm:block w-full sm:static sm:flex sm:shadow-none shadow-lg">
                         <div class="topnav flex gap-[10px] justify-center items-center w-full">
                             <!-- Navigation links -->
-                            <a href="#" class="uppercase sm:text-base text-sm  px-2 py-1 rounded-md hover:bg-zinc-900">Home</a>
+                            <a href="#home"
+                                class="uppercase sm:text-base text-sm  px-2 py-1 rounded-md hover:bg-zinc-900">Home</a>
                             <span> | </span>
-                            <a href="#" class="uppercase sm:text-base text-sm px-2 py-1 rounded-md hover:bg-zinc-900">Projects</a>
+                            <a href="#projects"
+                                class="uppercase sm:text-base text-sm px-2 py-1 rounded-md hover:bg-zinc-900">Projects</a>
                             <span> | </span>
-                            <a href="#" class="uppercase sm:text-base text-sm px-2 py-1 rounded-md hover:bg-zinc-900">About Me</a>
+                            <a href="#about-me"
+                                class="uppercase sm:text-base text-sm px-2 py-1 rounded-md hover:bg-zinc-900">About
+                                Me</a>
                             <span> | </span>
-                            <a href="#" class="uppercase sm:text-base text-sm px-2 py-1 rounded-md hover:bg-zinc-900">Contact</a>
+                            <a href="#contact"
+                                class="uppercase sm:text-base text-sm px-2 py-1 rounded-md hover:bg-zinc-900">Contact</a>
                         </div>
                     </div>
                     <div class="flex shrink-0 items-center min-w-20">
 
                     </div>
                 </div>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static hidden sm:inset-auto sm:ml-6 sm:pr-0 ">
-                    <el-dropdown class="relative ml-3">
-                        <el-menu anchor="bottom end" popover
-                            class="w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Your
-                                Profile</a>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Settings</a>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Sign
-                                out</a>
-                        </el-menu>
-                    </el-dropdown>
-                </div>
             </div>
         </div>
     </nav>
 
     <div class="main-body m-auto lg:mt-0 mt-20">
+        <div id="home"></div>
         <div
             class="section section-intro flex flex-col max-w-7xl min-h-screen items-center justify-center lg:w-3/4 m-auto lg:p-10 p-5">
             <h1 class="lg:text-7xl text-6xl font-bold text-center uppercase mt-10 mb-5">Matthew Janczak</h1>
@@ -195,72 +186,9 @@
         <p class="text-gray-500 text-sm">Built with Tailwind CSS and custom elements.</p>
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-
-   <script>
-  function fade(element, duration, fadeIn = true) {
-    let opacity = fadeIn ? 0 : 1;
-    const start = performance.now();
-
-    element.style.display = 'block';
-
-    function animate(time) {
-      const elapsed = time - start;
-      const progress = Math.min(elapsed / duration, 1);
-
-      element.style.opacity = fadeIn ? progress : 1 - progress;
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else if (!fadeIn) {
-        element.style.display = 'none';
-      }
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  function fadeIn(elementId, duration) {
-    const el = document.getElementById(elementId);
-    if (el) fade(el, duration, true);
-  }
-
-  function fadeOut(elementId, duration) {
-    const el = document.getElementById(elementId);
-    if (el) fade(el, duration, false);
-  }
-
-  // Scroll logic
-  let prevScrollPos = window.pageYOffset;
-  let navbarVisible = true; // Track current state
-
-  window.addEventListener('scroll', () => {
-    const currentScrollPos = window.pageYOffset;
-    const navbar = document.getElementById('navbar');
-
-    if (!navbar) return;
-
-    if (prevScrollPos > currentScrollPos) {
-      // Scrolling up
-      if (!navbarVisible) {
-        fadeIn('navbar', 300);
-        navbarVisible = true;
-      }
-    } else {
-      // Scrolling down
-      if (navbarVisible) {
-        fadeOut('navbar', 300);
-        navbarVisible = false;
-      }
-    }
-
-    prevScrollPos = currentScrollPos;
-  });
-</script>
-
-
-
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+<script src="/scripts/navbar.js"></script>
 
 </html>
